@@ -8,19 +8,18 @@ import 'mainpage.dart';
 void main() {
   runApp(MaterialApp(
     home: LandingPage(),
-    debugShowCheckedModeBanner: false,
   ));
 }
 
-class LandingPage extends StatefulWidget {
+class LandingPage extends StatefulWidget { // 랜딩 페이지여서 필요한거 상태변경 시켜주는거
   @override
   _LandingPageState createState() => _LandingPageState();
 }
 
-class _LandingPageState extends State<LandingPage> {
+class _LandingPageState extends State<LandingPage> { // state가 상속 받는거
   @override
   void initState() {
-    Timer(Duration(seconds: 3), () {
+    Timer(Duration(seconds: 1), () { // timer로 몇초뒤에 mainpage로 넘어가라는 명령어
       Get.to(MainPage());
     });
     super.initState();
@@ -31,12 +30,11 @@ class _LandingPageState extends State<LandingPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
-        alignment: Alignment.center,
         children: [
           Container(
-           height: double.infinity,
+           height: double.infinity, //가로 세로 풀 사이즈로 채워라
             width: double.infinity,
-            child: Image.asset('assets/choicewine.png',fit: BoxFit.fill),
+            child: Image.asset('assets/viewpage.png', fit: BoxFit.fill), // 이미지 사이즈 FIIL로 한다
           )
         ],
       ),
